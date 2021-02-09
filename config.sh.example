@@ -1,0 +1,15 @@
+#!/bin/bash                                           
+# author: Bc. Josef Jebavý 
+# date: 2021-02-09
+# config file for backup skript
+
+
+echo "----- load configuration --------"
+AdrZALOHY=/home/backuper/BACKUP
+USER="backuper"
+PORT="33002"
+IP="192.168.1.198"
+
+#disable backup for dirs:
+EXCLUDE="--exclude=lost+found --exclude=tmp --exclude=temp  "
+
