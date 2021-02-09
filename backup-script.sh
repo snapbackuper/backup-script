@@ -23,6 +23,8 @@ echo  "==== backuping... ===="
 
 #echo $DATE >> ~/backup-date.txt
 rsync -av --delete --delete-excluded  -e   "ssh -p $PORT -l $USER" ~/ $IP:$AdrZALOHY/ $EXCLUDE  #--dry-run
+echo wait, press enter
+read
 ssh -p $PORT $USER@$IP ">${AdrZALOHY}/backup"
 
 
