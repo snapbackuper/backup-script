@@ -5,7 +5,7 @@
 
 
 echo "----- load configuration --------"
-AdrZALOHY=/home/backuper/BACKUP
+AdrZALOHY=/home/backuper/BACKUP/DIR
 USER="backuper"
 PORT="33002"
 IP="192.168.1.198"
