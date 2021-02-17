@@ -18,7 +18,13 @@ echo
 renice 19 $$ > /dev/null
 
 
-ping $IP -c 1 1>/dev/null 2>/dev/null|| (echo "vzdalenhy stroj neodpovida"; exit 1)
+ping $IP -c 1 1>/dev/null 2>/dev/null
+if [  $? != 0 ];then
+
+echo "vzdalenhy stroj neodpovida"
+exit 1
+fi
+
 echo  "==== backuping... ===="
 
 #echo $DATE >> ~/backup-date.txt
