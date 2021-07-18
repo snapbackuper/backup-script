@@ -5,6 +5,7 @@
 
 
 echo "----- load configuration --------"
+SourceDir=$HOME
 AdrZALOHY=/home/backuper/BACKUP/DIR
 USER="backuper"
 PORT="33002"

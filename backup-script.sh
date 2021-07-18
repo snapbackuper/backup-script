@@ -28,7 +28,7 @@ fi
 echo  "==== backuping... ===="
 
 #echo $DATE >> ~/backup-date.txt
-rsync -av --delete --delete-excluded  -e   "ssh -p $PORT -l $USER" ~/ $IP:$AdrZALOHY $EXCLUDE  #--dry-run
+rsync -av --delete --delete-excluded  -e   "ssh -p $PORT -l $USER" ${SourceDir}/ $IP:$AdrZALOHY/ $EXCLUDE  #--dry-run
 ssh -p $PORT $USER@$IP ">${AdrZALOHY}/backup.snapbackuper"
 
 
