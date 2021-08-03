@@ -30,8 +30,8 @@ echo  "==== backuping... ===="
 #echo $DATE >> ~/backup-date.txt
 rsync -av --delete --delete-excluded  -e   "ssh -p $PORT -l $USER" ${SourceDir}/ $IP:$AdrZALOHY/ $EXCLUDE  #--dry-run
 
-
-if [ -z "$DBPASS" ]; then
+#is DBPASS set?
+if [ -n "$DBPASS" ]; then
 echo zalohuju databazi MySQL
 
 DBFILE="/root/mysql-dump_`date +%Y-%m-%d_%Hh`.sql"
