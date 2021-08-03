@@ -29,7 +29,21 @@ echo  "==== backuping... ===="
 
 #echo $DATE >> ~/backup-date.txt
 rsync -av --delete --delete-excluded  -e   "ssh -p $PORT -l $USER" ${SourceDir}/ $IP:$AdrZALOHY/ $EXCLUDE  #--dry-run
+
+
+if [ -z "$DBPASS" ]; then
+echo zalohuju databazi MySQL
+
+DBFILE="/root/mysql-dump_`date +%Y-%m-%d_%Hh`.sql"
+mysqldump  -u backup -p"${DBPASS}" --default-character-set=utf8mb4 --all-databases --result-file=$DBFILE
+gzip $DBFILE
+scp -P $PORT ${DBFILE}.gz $USER@$IP:${AdrZALOHY}/
+rm ${DBFILE}.gz
+fi
+
+echo end backup
 ssh -p $PORT $USER@$IP ">${AdrZALOHY}/backup.snapbackuper"
+
 
 
 
