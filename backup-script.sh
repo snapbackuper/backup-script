@@ -32,6 +32,10 @@ rsync -av --delete --delete-excluded  -e   "ssh -p $PORT -l $USER" ${SourceDir}/
 
 #is DBPASS set?
 if [ -n "$DBPASS" ]; then
+#smazani starych zaloh
+ssh -p $PORT $USER@$IP "rm -f ${AdrZALOHY}/mysql-dump*"
+
+
 echo zalohuju databazi MySQL
 
 DBFILE="/root/mysql-dump_`date +%Y-%m-%d_%Hh`.sql"
