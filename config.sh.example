@@ -12,5 +12,11 @@ PORT="33002"
 IP="192.168.1.198"
 
 #disable backup for dirs:
-EXCLUDE="--exclude=lost+found --exclude=tmp --exclude=temp  "
+EXCLUDE="--exclude=lost+found --exclude=tmp --exclude=temp  \
+--exclude=proc --exclude=sys --exclude=dev --exclude=media --exclude=mnt \
+--exclude=var/lib/mysql/ \
+--exclude=var/tmp --exclude=var/lib/yum/ --exclude=var/cache --exclude=run/log/journal "
+# mysql zalohovat dumpem DB
+
+DBPASS="TODO"
 
