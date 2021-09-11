@@ -18,5 +18,8 @@ EXCLUDE="--exclude=lost+found --exclude=tmp --exclude=temp  \
 --exclude=var/tmp --exclude=var/lib/yum/ --exclude=var/cache --exclude=run/log/journal "
 # mysql zalohovat dumpem DB
 
+# grant select,SHOW DATABASES,lock tables  on *.* to backup@localhost identified by 'pass';
+# grant all PRIVILEGES  on *.* to backup@localhost ;
+# FLUSH PRIVILEGES;
 DBPASS="TODO"
 

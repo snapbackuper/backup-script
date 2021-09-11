@@ -2,6 +2,11 @@
 # author: Bc. Josef Jebavý 
 # date: 2021-02-09
 # backup skript via ssh
+
+# cron config
+# */5 * * * *   root  cd DIR; sh backup-script.sh
+
+
 dir=`dirname $0`
 
 
