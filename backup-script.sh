@@ -43,8 +43,12 @@ ssh -p $PORT $USER@$IP "rm -f ${AdrZALOHY}/mysql-dump*"
 
 echo zalohuju databazi MySQL
 
+if [ -z ${DBNAME} ]; then
+     DBNAME="--all-databases"
+fi
+
 DBFILE="/root/mysql-dump_`date +%Y-%m-%d_%Hh`.sql"
-mysqldump  -u backup -p"${DBPASS}" --default-character-set=utf8mb4 --all-databases --result-file=$DBFILE
+mysqldump  -u backup -p"${DBPASS}" --default-character-set=utf8mb4  ${DBNAME} --result-file=$DBFILE
 gzip $DBFILE
 scp -P $PORT ${DBFILE}.gz $USER@$IP:${AdrZALOHY}/
 rm ${DBFILE}.gz

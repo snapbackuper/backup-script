@@ -22,4 +22,4 @@ EXCLUDE="--exclude=lost+found --exclude=tmp --exclude=temp  \
 # grant all PRIVILEGES  on *.* to backup@localhost ;
 # FLUSH PRIVILEGES;
 DBPASS="TODO"
-
+DBNAME="--all-databases"
